@@ -59,8 +59,7 @@ class Player {
     // Methods
     // Update position
     update() {
-    // check collision here
-        // Did player x and y collide with enemy?
+        // check collision here
         for(let enemy of allEnemies) {
             if (this.y === enemy.y && (enemy.x + enemy.move / 2 > this.x && enemy.x < this.x + this.leftRight / 2)) {
                 this.reset();
@@ -68,7 +67,6 @@ class Player {
         }
         // Check if the player win here
         if (this.y === -23) {
-        // Did player x and y reach final tile?
             this.victory = true;   
             showModal(); 
         }
@@ -118,15 +116,18 @@ class Player {
 
 // New Player object
 const player = new Player();
+
 // Init allEnemies array
-const enemyBug1 = new Enemy(-101, 0, 200); // 200
-const enemyBug2 = new Enemy(-101, 83, 150); // 150
-const enemyBug3 = new Enemy(-101, 83*2, 300); // 300
-const enemyBug4 = new Enemy(-101*5, 83, 150); // 150
-const enemyBug5 = new Enemy(-101*8, 0, 200); // 200
+const enemyBug1 = new Enemy(-101, 0, 200);
+const enemyBug2 = new Enemy(-101, 83, 150);
+const enemyBug3 = new Enemy(-101, 83*2, 300);
+const enemyBug4 = new Enemy(-101*5, 83, 150);
+const enemyBug5 = new Enemy(-101*8, 0, 200);
+
 // For each enemy create and push new Enemy object into above array
 const allEnemies = [];
 allEnemies.push(enemyBug1, enemyBug2, enemyBug3, enemyBug4, enemyBug5);
+
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
@@ -140,6 +141,7 @@ document.addEventListener('keyup', function(e) {
     player.handleInput(allowedKeys[e.keyCode]);
 });
 
+// Show and hide modal upon user click events
 const modal = document.querySelector('#modal');
 const showModal = () => {
     modal.style.display = 'block';
