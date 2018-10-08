@@ -1,5 +1,4 @@
 # Classic Arcade Game
-===============================
 
 This is the 3rd project for the Grow with Google Front End Web Development NanoDegree program. This is a clone of the classic Frogger game where the player must avoid obstacles to get across to the other side.
 
